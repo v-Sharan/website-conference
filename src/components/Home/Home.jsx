@@ -50,7 +50,7 @@ const images = [
   },
 ];
 
-const Home = () => {
+const Home = ({ nav }) => {
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = images.length;
 
@@ -66,96 +66,100 @@ const Home = () => {
     setActiveStep(step);
   };
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="card shadow-xl carousel w-[60%] h-[50%]">
-        <div className="carousel-item relative">
-          <AutoPlaySwipeableViews
-            axis={"x"}
-            index={activeStep}
-            onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
-            {images.map((step, index) => (
-              <div key={step.label} className="flex justify-center">
-                {Math.abs(activeStep - index) <= 2 ? (
-                  <img
-                    className="h-[50%] block max-w-[80] overflow-hidden rounded-xl w-[100%]"
-                    src={step.imgPath}
-                    alt={step.label}
-                  />
-                ) : null}
+    <>
+      {!nav && (
+        <div className="flex flex-col items-center justify-center">
+          <div className="card shadow-xl carousel w-[60%] h-[50%]">
+            <div className="carousel-item relative">
+              <AutoPlaySwipeableViews
+                axis={"x"}
+                index={activeStep}
+                onChangeIndex={handleStepChange}
+                enableMouseEvents
+              >
+                {images.map((step, index) => (
+                  <div key={step.label} className="flex justify-center">
+                    {Math.abs(activeStep - index) <= 2 ? (
+                      <img
+                        className="h-[50%] block max-w-[80] overflow-hidden rounded-xl w-[100%]"
+                        src={step.imgPath}
+                        alt={step.label}
+                      />
+                    ) : null}
+                  </div>
+                ))}
+              </AutoPlaySwipeableViews>
+              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <button
+                  className="btn btn-circle btn-outline"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}
+                >
+                  <MdNavigateBefore />
+                </button>
+                <button
+                  className="btn btn-circle btn-outline sm:hidden lg:hidden md:hidden"
+                  onClick={handleNext}
+                  disabled={activeStep === maxSteps - 1}
+                >
+                  <MdNavigateNext />
+                </button>
               </div>
-            ))}
-          </AutoPlaySwipeableViews>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <button
-              className="btn btn-circle btn-outline"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              <MdNavigateBefore />
-            </button>
-            <button
-              className="btn btn-circle btn-outline"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              <MdNavigateNext />
-            </button>
-          </div>
-        </div>
-      </div>
-      <h1 className="mt-12 font-semibold text-3xl lg:text-6xl sm:text-4xl md:text-5xl text-[#585ef9]">
-        About the seminar
-      </h1>
-      <p className="mt-11 text-[20px] md:text-xl sm:text-2xl text-gray-700">
-        The seminar aims to discuss and investigate the strategies for Quality
-        Improvement in Higher Educational Institutions
-      </p>
-      <div className="mt-20 flex gap-[2em] flex-wrap sm:items-center">
-        <Card>
-          <h1 className="card-title text-[#585ef9]">Objectives</h1>
-          <ul className="text-gray-700">
-            {Objectives.map((obj, index) => (
-              <li key={`${index}`}>•&nbsp;{obj}</li>
-            ))}
-          </ul>
-        </Card>
-        <Card>
-          <h1 className="card-title text-[#585ef9]">Important Date</h1>
-          <div className="flex flex-col gap-4 text-gray-700">
-            <div className="text-gray-700">
-              <p>
-                Last Date to Register:
-                <span className="font-sans">25.03.2023</span>
-              </p>
-              <p>
-                Date of Intimation:
-                <span className="font-sans">28.3.2023</span>
-              </p>
             </div>
           </div>
-        </Card>
-      </div>
-      <div className="mt-3 flex gap-[2em] flex-wrap">
-        <Card>
-          <h1 className="card-title text-[#585ef9]">Themes</h1>
-          <ul className="text-gray-700">
-            {Themes.map((obj, index) => (
-              <li key={`${index}`}>•&nbsp;{obj}</li>
-            ))}
-          </ul>
-        </Card>
-        <Card>
-          <h1 className="card-title text-[#585ef9]">Expected Outcome</h1>
-          <ul className="text-gray-700">
-            {Outcomes.map((obj, index) => (
-              <li key={`${index}`}>•&nbsp;{obj}</li>
-            ))}
-          </ul>
-        </Card>
-      </div>
-    </div>
+          <h1 className="mt-12 font-semibold text-3xl lg:text-6xl sm:text-4xl md:text-5xl text-[#585ef9]">
+            About the seminar
+          </h1>
+          <p className="mt-11 text-[20px] md:text-xl sm:text-2xl text-gray-700">
+            The seminar aims to discuss and investigate the strategies for
+            Quality Improvement in Higher Educational Institutions
+          </p>
+          <div className="mt-20 flex gap-[2em] flex-wrap sm:items-center">
+            <Card>
+              <h1 className="card-title text-[#585ef9]">Objectives</h1>
+              <ul className="text-gray-700">
+                {Objectives.map((obj, index) => (
+                  <li key={`${index}`}>•&nbsp;{obj}</li>
+                ))}
+              </ul>
+            </Card>
+            <Card>
+              <h1 className="card-title text-[#585ef9]">Important Date</h1>
+              <div className="flex flex-col gap-4 text-gray-700">
+                <div className="text-gray-700">
+                  <p>
+                    Last Date to Register:
+                    <span className="font-sans">25.03.2023</span>
+                  </p>
+                  <p>
+                    Date of Intimation:
+                    <span className="font-sans">28.3.2023</span>
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+          <div className="mt-3 flex gap-[2em] flex-wrap">
+            <Card>
+              <h1 className="card-title text-[#585ef9]">Themes</h1>
+              <ul className="text-gray-700">
+                {Themes.map((obj, index) => (
+                  <li key={`${index}`}>•&nbsp;{obj}</li>
+                ))}
+              </ul>
+            </Card>
+            <Card>
+              <h1 className="card-title text-[#585ef9]">Expected Outcome</h1>
+              <ul className="text-gray-700">
+                {Outcomes.map((obj, index) => (
+                  <li key={`${index}`}>•&nbsp;{obj}</li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

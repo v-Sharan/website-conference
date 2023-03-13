@@ -8,7 +8,7 @@ const Speaker = [
     institute:
       "Head/ Teaching Learning Process in Higher Education Sector Indian Institute of Technology, Madras",
     photo:
-      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678112872/hfahwxe6xone19ou4sfe.png",
+      "https://res.cloudinary.com/dfje97i0k/image/upload/c_scale,h_564,w_557/v1678706709/Edamana_zs0qsp.jpg",
   },
   {
     name: "Dr.M.G. Sethuraman,",
@@ -17,7 +17,7 @@ const Speaker = [
     institute:
       "The Gandhigram Rural Institute-Deemed to be University, Dindigul, Tamil Nadu.",
     photo:
-      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678112872/hfahwxe6xone19ou4sfe.png",
+      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678706709/Sethuraman_qctuww.jpg",
   },
   {
     name: "Dr. S Renukadevi,",
@@ -27,7 +27,7 @@ const Speaker = [
     institute:
       "National Institute of Technical Teachers Training and Research, Chennai",
     photo:
-      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678112872/hfahwxe6xone19ou4sfe.png",
+      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678706709/Renukadevi_aua2fx.jpg",
   },
   {
     name: "Dr.K.Ramar",
@@ -37,7 +37,7 @@ const Speaker = [
     institute:
       "R.M.K. College of Engieering and Technology, Puduvoyal, Thiruvallur",
     photo:
-      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678112872/hfahwxe6xone19ou4sfe.png",
+      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678706710/RAMAR_mo2eup.png",
   },
   {
     name: "Dr.K.Mourougayane",
@@ -46,7 +46,7 @@ const Speaker = [
       "Programme Director (Projects),,Scientist F, HoD DSP & EP Divisions,",
     institute: "SAMEER - Centre for Electromagnetics, Chennai",
     photo:
-      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678112872/hfahwxe6xone19ou4sfe.png",
+      "https://res.cloudinary.com/dfje97i0k/image/upload/v1678706709/Mourougayane_htbipa.jpg",
   },
   {
     name: "Dr. P.SHANMUGAVADIVU",
